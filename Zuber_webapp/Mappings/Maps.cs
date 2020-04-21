@@ -8,9 +8,9 @@ using Zuber_webapp.Models;
 
 namespace Zuber_webapp.Mappings
 {
-    public class Mapper: Profile 
+    public class Maps: Profile 
     {
-        public Mapper()
+        public Maps()
         {
             CreateMap<Driver, DriverVM>().ReverseMap();
             CreateMap<Trip, TripVM>().ReverseMap();

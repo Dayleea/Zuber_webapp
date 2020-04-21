@@ -14,6 +14,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Zuber_webapp.Repositories;
 using Zuber_webapp.Contracts;
+using AutoMapper;
+using Zuber_webapp.Mappings;
 
 namespace Zuber_webapp
 {
@@ -38,6 +40,7 @@ namespace Zuber_webapp
             services.AddScoped<IDriverRepository, DriverRepository>();
             services.AddScoped<ITripRespository, TripRepository>();
 
+            services.AddAutoMapper(typeof(Maps));
 
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
