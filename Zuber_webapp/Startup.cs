@@ -34,9 +34,10 @@ namespace Zuber_webapp
                     Configuration.GetConnectionString("DefaultConnection")));
             
             //References for the repository and contracts
-            services.AddScoped<CartypeRepository, CartypeRepository>();
+            services.AddScoped<ICarTypeRepository, CarTypeRepository>();
             services.AddScoped<IDriverRepository, DriverRepository>();
-            IServiceCollection serviceCollection = services.AddScoped<ITripRepository, TripRepository>();
+            services.AddScoped<ITripRespository, TripRepository>();
+
 
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
@@ -76,6 +77,7 @@ namespace Zuber_webapp
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
+
             });
         }
     }

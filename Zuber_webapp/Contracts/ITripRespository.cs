@@ -9,6 +9,6 @@ namespace Zuber_webapp.Contracts
     interface ITripRespository: IRepositoryBase<Trip>
     {
 
-        ICollection<Trip> GetDriverByTrip(int id);
+        ICollection<Trip> GetPeopleByTrip(int id);
     }
 }
